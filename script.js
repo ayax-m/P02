@@ -42,14 +42,16 @@ function renderElement() {
   let container = document.getElementById('palabra')
   console.log(arr)
   container.innerHTML = '';
-    arr.forEach(function (el) {
+  arr.forEach(function (el) {
     container.innerHTML += `
-    <li>
-      ${el} 
-      <button onclick="eliminar(this.id)" id="${el}">Eliminar</button>
-      <button onclick="editar(this.id)" id="${el}">Editar</button>
-    </li>
-  `;
+    <tr>
+    
+      <td>${el} </td>
+      <td><button class="btn-del" onclick="eliminar(this.id)" id="${el}">Eliminar</button></td>
+      <td><button class="btn-edit" onclick="editar(this.id)" id="${el}">Editar</button></td>
+    
+    </tr>
+    `;
   })
   
 }
