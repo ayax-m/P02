@@ -46,7 +46,8 @@ a {
     height: 50px;
     /*background-color: #53575c; */
     background-color: white;
-    box-shadow: 2px 2px 1px #0056FF;
+    /*box-shadow: 2px 2px 1px #22577E;*/
+    box-shadow: 2px 2px 1px #22577E;
     position: relative;
     z-index: 2;
 }
@@ -76,7 +77,7 @@ a {
 }
 
 .menu-bar li a {
-    color: #0056FF; 
+    color: #22577E; 
     /*color: red; */
 }
 
@@ -105,17 +106,20 @@ a {
     padding: 5px 15px;
     text-align: center;
     color: white;
-    background: green;
+    /*background: green;*/
+    background: #22577E;
     border-radius: 5px;
  }
 
  .btn-del {
-     background-color: red;
+     /*background-color: red;*/
+     background-color: #F05454;
      padding: 5px 15px;
  }
 
  .btn-edit {
-    background-color: #0056FF;
+    /*background-color: #0056FF;*/
+    background-color: #5584AC;
     padding: 5px 20px;
 }
 

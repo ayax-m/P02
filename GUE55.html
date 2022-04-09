@@ -42,93 +42,82 @@
     <!--<script src="./script.js"></script> -->
 
 <script>
-let arr = [];
-//console.log(localStorage.getItem('arrPalabras'))
-var localS = localStorage.getItem('arrPalabras');
-if (localS == null || localS == "") {
-	arr = [];
-} else {
-	arr = localS.split(',');
-}
-
-var bancoDePalabras;
-
-var intentos = 0 //Declara la variable intentos que va a revisar cuantas veces el jugador a puesta una respuesta en adivinar.
-
-var reglas = alert("Bienvenido a GUE55, en este juego tu tendras una palabra de 5 letras y 5 intentos para adivinarla, cuando hayas puesto una letra que no esta en la palabra, va a aparecer este simbulo: _ si adivinaste una letra pero no en su lugar correspondiente va a aparecer: ?, y cuando este la letra en su lugar va a ser la letra la que aparece en la palabra");
-
-if (arr.length > 0) {
-	bancoDePalabras = arr;
-} else {
-bancoDePalabras = ["comic", "covid", "boxer", "dulce", "fresa", "guapo", "hotel", "karma", "pausa", "solar", "avena", "error", "video", "juego"];
-localStorage.setItem('arrPalabras', bancoDePalabras);
-
-}
-
-var elegirPalabra = bancoDePalabras[Math.floor(Math.random()*bancoDePalabras.length) ];
-console.log(elegirPalabra);
-var respuesta= [];// variable para almacenar una palabra
-		for (var i = 0; i < elegirPalabra.length; i++)
-		{
-		respuesta[i] = "_"; // pone la cantidad de letras de la palabra
-		}
-var restantes= elegirPalabra.length;
-    while ( restantes > 0 && intentos<5){ //repeterir hasta vaciar respuestas[]
-	alert(respuesta.join(" ")); //muestra la matriz respuestas[]
-	
-	var adivinar = prompt ("Adivina una palabra de 5 letras o haz clic en Cancelar para detener la reproduccion"); //captura la letra que el jugador envia
-    
-	if(adivinar === null){ // si eligio cancelar es fin de juego
-		break; // detiene el whilel y manda al final del juego
-	}else 
-		if( adivinar.length !== 5)  //revisa que no sea mas de 5 letras
-		  {
-		alert("Introduzca solamente 5 letras.");//advertencia de muchas letras
-		  }
-		  else{intentos++
-  //si el jugador no cancelo y ademas puso 5 letras, revisa si la letra concuerda con alguno de las letras
-			respuesta = ["_ ","_ ","_ ","_ ","_"]
-			for (var j=0; j<5;j++)
-			{
-			 for (var f=0; f<5;f++)
-			    {
-			    if(elegirPalabra[j] === adivinar[f]) //si concuerda la letra
-			    {
-				if(j == f) // si concuerda posicion
-					{
-					respuesta[j] = adivinar[f] // cambiando valor de respuesta
-					}
-					else{if(j >= f){
-					respuesta[f] = "?"}}
-			    }
-				}
-		        }
-		if (adivinar === elegirPalabra)
-		   {
-		 alert("Felicitaciones! adivinaste la palabra! La palabra era " +elegirPalabra + " y lo adivinaste en " + intentos +" intento(s)! si quieres volver a jugar presiona fn + f5")
-		     break;
-			 
-
-                }
-				}
-				}
-				
-if (intentos === 5)
-	{
-		alert("Ya usaste tus 5 intentos! La palabra era "+ elegirPalabra +", si quieres volver a jugar presiona fn + f5")
+	let arr = [];
+	//console.log(localStorage.getItem('arrPalabras'))
+	var localS = localStorage.getItem('arrPalabras');
+	if (localS == null || localS == "") {
+		arr = [];
+	} else {
+		arr = localS.split(',');
 	}
+
+	var bancoDePalabras;
+
+	var intentos = 0 //Declara la variable intentos que va a revisar cuantas veces el jugador a puesta una respuesta en adivinar.
+
+	var reglas = alert("Bienvenido a GUE55, en este juego tu tendras una palabra de 5 letras y 5 intentos para adivinarla, cuando hayas puesto una letra que no esta en la palabra, va a aparecer este simbulo: _ si adivinaste una letra pero no en su lugar correspondiente va a aparecer: ?, y cuando este la letra en su lugar va a ser la letra la que aparece en la palabra");
+
+	if (arr.length > 0) {
+		bancoDePalabras = arr;
+	} else {
+	bancoDePalabras = ["comic", "covid", "boxer", "dulce", "fresa", "guapo", "hotel", "karma", "pausa", "solar", "avena", "error", "video", "juego"];
+	localStorage.setItem('arrPalabras', bancoDePalabras);
+
+	}
+
+	var elegirPalabra = bancoDePalabras[Math.floor(Math.random()*bancoDePalabras.length) ];
+	console.log(elegirPalabra);
+	var respuesta= [];// variable para almacenar una palabra
+			for (var i = 0; i < elegirPalabra.length; i++)
+			{
+			respuesta[i] = "_"; // pone la cantidad de letras de la palabra
+			}
+	var restantes= elegirPalabra.length;
+		while ( restantes > 0 && intentos<5){ //repeterir hasta vaciar respuestas[]
+		alert(respuesta.join(" ")); //muestra la matriz respuestas[]
+		
+		var adivinar = prompt ("Adivina una palabra de 5 letras o haz clic en Cancelar para detener la reproduccion"); //captura la letra que el jugador envia
+		
+		if(adivinar === null){ // si eligio cancelar es fin de juego
+			break; // detiene el whilel y manda al final del juego
+		}else 
+			if( adivinar.length !== 5)  //revisa que no sea mas de 5 letras
+			{
+			alert("Introduzca solamente 5 letras.");//advertencia de muchas letras
+			}
+			else{intentos++
+	//si el jugador no cancelo y ademas puso 5 letras, revisa si la letra concuerda con alguno de las letras
+				respuesta = ["_ ","_ ","_ ","_ ","_"]
+				for (var j=0; j<5;j++)
+				{
+				for (var f=0; f<5;f++)
+					{
+					if(elegirPalabra[j] === adivinar[f]) //si concuerda la letra
+					{
+					if(j == f) // si concuerda posicion
+						{
+						respuesta[j] = adivinar[f] // cambiando valor de respuesta
+						}
+						else{if(j >= f){
+						respuesta[f] = "?"}}
+					}
+					}
+					}
+			if (adivinar === elegirPalabra)
+			{
+			alert("Felicitaciones! adivinaste la palabra! La palabra era " +elegirPalabra + " y lo adivinaste en " + intentos +" intento(s)! si quieres volver a jugar presiona fn + f5")
+				break;
 				
-/*
-function getElements() {
-  
-  let localS = localStorage.getItem('arrPalabras')
-  arr = localS.split(',')
-  //renderElement()
-  
-}
-getElements()*/
 
-
+					}
+					}
+					}
+					
+	if (intentos === 5)
+		{
+			alert("Ya usaste tus 5 intentos! La palabra era "+ elegirPalabra +", si quieres volver a jugar presiona fn + f5")
+		}
+					
 </script>
 
 
