@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto 2</title>
-    <script src="./dict.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Anton|Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Juego</title>
 </head>
+
 <body>
-    
+    <div class="header">
+
+        <div class="barra-superior">
+            <div class="logo">
+                <img src="./img/FaviconTransparent.ico">
+            </div>
+            <div class="contenedor-menu-bar">
+                <ul class="menu-bar">
+                    <li class="juego">
+                        <a href="./GUE55.html">Juego</a>
+                    </li>
+                    <li class="instrucciones">
+                        <a href="#">Instrucciones</a>
+                    </li>
+                    <li class="diccionario"> 
+                        <a href="./index.html">Diccionario</a>
+                    </li>
+                    <li class="contacto"> 
+                        <a href="#">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="busqueda"> 
+                <input type="text" placeholder="Buscar...">
+            </div>
+        </div>
+
+        <div class="main-menu-dic">
+            <div class="menu-container">
+                <div>
+                <input id="input-1" type="text" />
+                <button id="guardar">Agregar</button>
+                </div>
+                <div id="arrPalabras">  <!-- lista-pokemon -->
+                    <ul id="palabra">      <!-- lista -->
+                    </ul>
+                </div>
+
+        </div>
+        
+
+    </div>
+
+
+    <script src="./script.js"></script>
+
 </body>
+
 </html>
