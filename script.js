@@ -47,8 +47,8 @@ function renderElement() {
     <tr>
     
       <td>${el} </td>
-      <td><button class="btn-del" onclick="eliminar(this.id)" id="${el}">Eliminar</button></td>
-      <td><button class="btn-edit" onclick="editar(this.id)" id="${el}">Editar</button></td>
+      <td><button class="btn-del" onclick="eliminar(this.id)" id="${el}"><i class="fa-solid fa-trash-can"></i></button></td>
+      <td><button class="btn-edit" onclick="editar(this.id)" id="${el}"><i class="fas fa-edit"></i></button></td>
     
     </tr>
     `;

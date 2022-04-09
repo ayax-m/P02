@@ -6,7 +6,7 @@
     margin: 0;
     list-style-type: none;
     text-decoration: none;
-    overflow-y: hidden;
+    /*overflow-y: hidden;*/
 }
 
 body {
@@ -24,19 +24,7 @@ a {
     letter-spacing: 1px;
 }
 
-.brand-wrapper {
-    display: grid;
-    height: 50px;
-    grid-template-columns: repeat(4, 300px);
-    background-color: #f3f3ec;
-    justify-items: center;
-    align-items: center;
-}
 
-.brand-wrapper img {
-    height: 40px;
-    grid-column: -1 / -2;
-}
 
 .barra-superior {
     display: grid;
@@ -103,27 +91,39 @@ a {
 
  button {
     border: none;
-    padding: 5px 15px;
+    /* padding: 5px 15px;*/
+    padding: 2px 5px;
     text-align: center;
     color: white;
     /*background: green;*/
     background: #22577E;
     border-radius: 5px;
+    font-size: 16px;
  }
 
  .btn-del {
      /*background-color: red;*/
      background-color: #F05454;
-     padding: 5px 15px;
+     /*padding: 5px 15px;*/
  }
 
  .btn-edit {
     /*background-color: #0056FF;*/
     background-color: #5584AC;
-    padding: 5px 20px;
+    /*padding: 5px 20px;*/
 }
 
 table {
     border-spacing: 10px;
     
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #22577E;
+    color: white;
+    text-align: center;
 }
